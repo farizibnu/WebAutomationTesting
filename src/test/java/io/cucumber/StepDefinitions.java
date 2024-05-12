@@ -41,6 +41,63 @@ public class StepDefinitions {
         loginButton.click();
     }
 
+    @When("I enter invalid username and password")
+    public void i_enter_invalid_username_and_password() {
+        WebElement usernameField = driver.findElement(By.id("user-name"));
+        WebElement passwordField = driver.findElement(By.id("password"));
+
+        // Input invalid username and password
+        usernameField.sendKeys("standard");
+        passwordField.sendKeys("standarduser321");
+    }
+
+    @Then("I should see an invalid username or password error message")
+    public void i_should_see_an_invalid_username_or_password_error_message() {
+        WebElement errorMessage = driver.findElement(By.xpath("//h3[@data-test='error']"));
+        String expectedErrorMessage = "Username and password do not match any user in this service!";
+        String actualErrorMessage = errorMessage.getText();
+        assertEquals(expectedErrorMessage, actualErrorMessage);
+
+        // Close the WebDriver after the scenario completes
+        driver.quit();
+    }
+
+    @When("I do not enter username and password")
+    public void i_do_not_enter_username_and_password() {
+        // No action needed as we are not entering anything
+    }
+
+    @Then("I should see a username is required error message")
+    public void i_should_see_a_username_is_required_error_message() {
+        WebElement errorMessage = driver.findElement(By.xpath("//h3[@data-test='error']"));
+        String expectedErrorMessage = "You need Username & Password!";
+        String actualErrorMessage = errorMessage.getText();
+        assertEquals(expectedErrorMessage, actualErrorMessage);
+
+        // Close the WebDriver after the scenario completes
+        driver.quit();
+    }
+
+    @When("I enter registered username with incorrect password")
+    public void i_enter_registered_username_with_incorrect_password() {
+        WebElement usernameField = driver.findElement(By.id("user-name"));
+        WebElement passwordField = driver.findElement(By.id("password"));
+
+        // Input registered username with incorrect password
+        usernameField.sendKeys("standard_user");
+        passwordField.sendKeys("incorrectPassword");
+    }
+
+    @Then("I should see an error message for incorrect password")
+    public void i_should_see_an_error_message_for_incorrect_password() {
+        WebElement errorMessage = driver.findElement(By.xpath("//h3[@data-test='error']"));
+        String expectedErrorMessage = "Username  and password do not match any user in  this service!";
+        String actualErrorMessage = errorMessage.getText();
+        assertEquals(expectedErrorMessage, actualErrorMessage);
+
+        // Close the WebDriver after the scenario completes
+        driver.quit();
+    }
 
     @Given("the user is on the dashboard page")
     public void the_user_is_on_the_dashboard_page() {
