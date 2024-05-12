@@ -11,6 +11,24 @@ Feature: Login
       | username       | password      |
       | standard_user  | secret_sauce  |
 
+  Scenario:Negative Login - Attempting to login with invalid credentials
+    Given I am on the login page
+    When I enter invalid username and password
+    And I click the login button
+    Then I should see an invalid username or password error message
+
+  Scenario: Negative Login - User does not input username and password
+    Given I am on the login page
+    When I do not enter username and password
+    And I click the login button
+    Then I should see a username is required error message
+
+  Scenario: Negative Login - User enters registered username with incorrect password
+    Given I am on the login page
+    When I enter registered username with incorrect password
+    And I click the login button
+    Then I should see an error message for incorrect password
+
   Scenario Outline: Negative Login - Valid Username and Empty Password
     Given I am on the login page
     When I enter "<username>" as username
