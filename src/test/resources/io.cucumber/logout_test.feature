@@ -1,6 +1,7 @@
 Feature: Logout
   This feature deals with the logout functionality
 
+  # Scenario test case 0.1.1
   Scenario: Positive Logout
     Given the user is logged in to the application with username "standard_user" and password "secret_sauce"
     And the user is on the dashboard page
