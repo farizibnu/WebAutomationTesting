@@ -83,6 +83,3 @@ Feature: Login
     Examples:
       | password         |
       | standarduser321  |
-
-
-
