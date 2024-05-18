@@ -94,6 +94,18 @@ Hasil report dari test automation yang telah dijalankan akan tersimpan pada file
 ```
 Contoh hasil test report
 ![image](https://github.com/farizibnu/WebAutomationTesting/assets/95133669/d42aa428-cece-46fa-ab00-633e00bb457e)
+Hasil test report akan menunjukan beberapa hal diantaranya adalah :
+1. Persentase skenario test case yang berhasil
+2. Last run
+3. Durasi pengujian
+4. Sistem Operasi
+5. Java HotSpot(TM) 64-Bit Server VM 11.0.10+8-LTS-162
+6. Informasi Teknis yang digunakan :
+    - Cucumber-JVM Version: 7.17.0
+    - Java Version: Java HotSpot(TM) 64-Bit Server VM 11.0.10+8-LTS-162
+      
+Selain itu, adapun detail list skenario yang dijalankan. Misalnya adalah skenario berikut
+![image](https://github.com/farizibnu/WebAutomationTesting/assets/95133669/9b62f00a-d5a0-406e-b4c1-ab81da2cfa22)
 
 ## Test Cases
 ### Login Test Cases
