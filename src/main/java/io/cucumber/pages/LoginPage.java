@@ -1,33 +1,30 @@
 package io.cucumber.pages;
 
-import org.openqa.selenium.By;
+import io.cucumber.locators.PageLocators;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     private WebDriver driver;
-
-    private By usernameField = By.id("user-name");
-    private By passwordField = By.id("password");
-    private By loginButton = By.id("login-button");
-    private By errorMessage = By.xpath("//h3[@data-test='error']");
+    private PageLocators locators;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        this.locators = new PageLocators(driver);  // Initialize Page Locators
     }
 
     public void enterUsername(String username) {
-        driver.findElement(usernameField).sendKeys(username);
+        locators.usernameField.sendKeys(username);
     }
 
     public void enterPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
+        locators.passwordField.sendKeys(password);
     }
 
     public void clickLoginButton() {
-        driver.findElement(loginButton).click();
+        locators.loginButton.click();
     }
 
     public String getErrorMessage() {
-        return driver.findElement(errorMessage).getText();
+        return locators.errorMessage.getText();
     }
 }
