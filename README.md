@@ -90,7 +90,7 @@ Test report adalah laporan yang dihasilkan setelah menjalankan serangkaian pengu
 ### How to check Test Report
 Hasil report dari test automation yang telah dijalankan akan tersimpan pada file berikut
 ```
-..\test-report.html
+./testreport/test-report.html
 ```
 Contoh hasil test report
 ![image](https://github.com/farizibnu/WebAutomationTesting/assets/95133669/d42aa428-cece-46fa-ab00-633e00bb457e)
@@ -106,6 +106,30 @@ Hasil test report akan menunjukan beberapa hal diantaranya adalah :
       
 Selain itu, adapun detail list skenario yang dijalankan. Misalnya adalah skenario berikut
 ![image](https://github.com/farizibnu/WebAutomationTesting/assets/95133669/9b62f00a-d5a0-406e-b4c1-ab81da2cfa22)
+#### Scenario Outline
+Tujuan: Untuk memverifikasi bahwa pengguna dapat melakukan login dengan sukses menggunakan kredensial yang valid.
+Skenario login diatas menunjukan terdapat 4 skenario :
+1. Given: I am on the login page
+   - Langkah ini memastikan bahwa pengguna berada di halaman login.
+   - Implementasi teknis: Driver web mengarahkan ke URL halaman login aplikasi.
+   - Status: Berhasil (✔️), menunjukkan bahwa navigasi ke halaman login berhasil dilakukan.
+2. When: I enter "<username>" and "<password>"
+   - Langkah ini memasukkan kredensial pengguna ke dalam formulir login.
+   - Implementasi teknis: Metode pengujian memasukkan nilai "standard_user" di bidang username dan "secret_sauce" di bidang password.
+   - Status: Berhasil (✔️), menunjukkan bahwa kredensial pengguna berhasil dimasukkan ke dalam bidang input yang sesuai.
+3. And: I click the login button
+   - Langkah ini mengirimkan formulir login dengan mengklik tombol login.
+   - Implementasi teknis: Metode pengujian melakukan klik pada tombol login menggunakan driver web.
+   - Status: Berhasil (✔️), menunjukkan bahwa tombol login berhasil diklik dan permintaan login dikirimkan.
+4. Then: I should be redirected to the dashboard page
+   - Langkah ini memverifikasi bahwa pengguna berhasil login dan diarahkan ke halaman dashboard.
+   - Implementasi teknis: Metode pengujian memeriksa apakah URL atau elemen halaman saat ini menunjukkan bahwa pengguna berada di halaman dashboard.
+   - Status: Berhasil (✔️), menunjukkan bahwa setelah login, pengguna berhasil diarahkan ke halaman dashboard.
+     
+Kesimpulan
+- Scenario berhasil diuji: Semua langkah dalam skenario berhasil dijalankan tanpa masalah.
+- Validasi Login: Kredensial standard_user dan secret_sauce valid untuk login dan mengarahkan pengguna ke halaman dashboard.
+- Kebenaran Implementasi: Proses login telah diuji dengan benar sesuai dengan spesifikasi yang diberikan dalam skenario outline.
 
 ## Test Cases
 ### Login Test Cases
