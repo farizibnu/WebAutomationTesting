@@ -54,24 +54,33 @@ WebAutomationTesting
    └─ test-report.html
 ```
 
-### Project Stucture Explanation
-- pom.xml: File Maven Project Object Model (POM) yang digunakan untuk mengelola proyek, mengonfigurasi plugin, dan mendefinisikan dependensi yang diperlukan.
-- README.md: File ini berisi dokumentasi proyek, memberikan informasi tentang tujuan, cara menggunakan proyek, dan detail lainnya.
-- `src`: Direktori utama untuk sumber kode dan file pengujian.
-  - `main/java/io/cucumber/pages`: Direktori ini berisi kelas-kelas Page Object Model (POM) yang merepresentasikan halaman web yang akan diuji.
-    Contohnya:
-    - DashboardPage.java: Kelas ini berisi metode untuk berinteraksi dengan elemen-elemen pada halaman dashboard.
-    - LoginPage.java: Kelas ini berisi metode untuk berinteraksi dengan elemen-elemen pada halaman login.
-  - `test/java/io/cucumber/StepDefinitions`: Direktori ini berisi definisi langkah (step definitions) yang menghubungkan langkah-langkah dalam file fitur (feature files) dengan kode Java yang mengimplementasikan langkah-langkah tersebut.
-    - StepDefinitions.java: Kelas ini berisi semua definisi langkah untuk skenario pengujian.
-  - `test/java/io/cucumber/TestRunner`: Direktori ini berisi kelas untuk menjalankan pengujian.
-    - TestRunner.java: Kelas ini mengonfigurasi dan menjalankan tes Cucumber.
-  - `test/resources`: Direktori ini berisi file konfigurasi dan file fitur Cucumber.
-     - cucumber.properties: File konfigurasi untuk Cucumber.
-     - io.cucumber: Direktori ini berisi file fitur (feature files) yang mendefinisikan skenario pengujian dalam bahasa Gherkin.
-        - login_test.feature: File fitur untuk skenario pengujian login.
-        - logout_test.feature: File fitur untuk skenario pengujian logout.
-- `test-report.html`: File ini berisi laporan hasil pengujian dalam format HTML.
+### Project Structure Explanation
+
+- **pom.xml**: File Maven Project Object Model (POM) yang digunakan untuk mengelola proyek, mengonfigurasi plugin, dan mendefinisikan dependensi yang diperlukan.
+- **README.md**: File ini berisi dokumentasi proyek, memberikan informasi tentang tujuan, cara menggunakan proyek, dan detail lainnya.
+- **.gitignore**: File ini berisi daftar file dan direktori yang harus diabaikan oleh Git.
+- **.idea**: Direktori ini berisi pengaturan proyek IntelliJ IDEA.
+- **.vscode**: Direktori ini berisi pengaturan proyek Visual Studio Code.
+  - `settings.json`: File ini berisi pengaturan spesifik untuk proyek di Visual Studio Code.
+- **src**: Direktori utama untuk sumber kode dan file pengujian.
+  - **main/java/io/cucumber**:
+    - `Main.java`: Kelas utama untuk menjalankan aplikasi.
+  - **test/java/io/cucumber**:
+    - **locators**:
+      - `PageLocators.java`: Kelas ini berisi definisi locator untuk elemen-elemen pada halaman web yang akan diuji.
+    - **pages**:
+      - `DashboardPage.java`: Kelas ini berisi metode untuk berinteraksi dengan elemen-elemen pada halaman dashboard.
+      - `LoginPage.java`: Kelas ini berisi metode untuk berinteraksi dengan elemen-elemen pada halaman login.
+    - **StepDefinitions**:
+      - `StepDefinitions.java`: Kelas ini berisi semua definisi langkah (step definitions) untuk skenario pengujian. Langkah-langkah ini menghubungkan langkah-langkah dalam file fitur (feature files) dengan kode Java yang mengimplementasikan langkah-langkah tersebut.
+    - **TestRunner**:
+      - `TestRunner.java`: Kelas ini mengonfigurasi dan menjalankan tes Cucumber.
+  - **test/resources**:
+    - `cucumber.properties`: File konfigurasi untuk Cucumber.
+    - **io.cucumber**:
+      - `login_test.feature`: File fitur untuk skenario pengujian login.
+      - `logout_test.feature`: File fitur untuk skenario pengujian logout.
+- **testreport/test-report.html**: File ini berisi laporan hasil pengujian dalam format HTML.
 
 ## How to Run the Tests
 1. Clone repository ini melalui git bash, dengan menjalankan perintah berikut
