@@ -31,13 +31,16 @@ WebAutomationTesting
 │  │  └─ java
 │  │     └─ io
 │  │        └─ cucumber
-│  │           └─ pages
-│  │              ├─ DashboardPage.java
-│  │              └─ LoginPage.java
+│  │           └─ Main.java
 │  └─ test
 │     ├─ java
 │     │  └─ io
 │     │     └─ cucumber
+│     │        ├─ locators
+│     │        │  └─ PageLocators.java
+│     │        ├─ pages
+│     │        │  ├─ DashboardPage.java
+│     │        │  └─ LoginPage.java
 │     │        ├─ StepDefinitions
 │     │        │  └─ StepDefinitions.java
 │     │        └─ TestRunner
@@ -47,7 +50,8 @@ WebAutomationTesting
 │        └─ io.cucumber
 │           ├─ login_test.feature
 │           └─ logout_test.feature
-└─ test-report.html
+└─ testreport
+   └─ test-report.html
 ```
 
 ### Project Stucture Explanation
